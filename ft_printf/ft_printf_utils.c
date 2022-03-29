@@ -1,10 +1,5 @@
 #include "ft_printf.h"
 
-// int ft_except(va_list *ap, char type)
-// {
-
-// }
-
 int print_value(va_list *ap, char type)
 {
     int value;
@@ -15,15 +10,15 @@ int print_value(va_list *ap, char type)
     else if (type == 's')
         value = ft_putstr(va_arg(*ap, char *));
     else if (type == 'p')
-        value = ft_putstr("0x") + 123;
-    // else if (type == 'd' || type == 'i')
-    //     123;
+        value = ft_putstr("0x") + ft_form_p((unsigned long)va_arg(*ap, void *), "0123456789abcdef");
+    else if (type == 'd' || type == 'i')
+        value = ft_form_d_i(va_arg(*ap, long int));
     else if (type == 'u')
-        value = ft_basedeci(va_arg(*ap, int), );
-    // esle if (type == 'X')
-    //     123;
-    // else if (type == 'x')
-    //     213;
+        value = ft_form_u(va_arg(*ap, int), "0123456789");
+    else if (type == 'X')
+        value = ft_form_x_1(va_arg(*ap, unsigned int), "0123456789ABCDEF");
+     else if (type == 'x')
+        value = ft_form_x_2(va_arg(*ap, unsigned int), "0123456789abcdef");
     else if (type == '%')
         value = ft_putchr('%');
     return (value);
@@ -34,15 +29,16 @@ int type_check(va_list *ap,const char *types, int *cnt)
     int i;
 
     i = 0;
+    *cnt = 0;
     while (types[i])
 	{
 		if (types[i] != '%')
 		{
-			*cnt = *cnt + ft_putchr(types[i]);
+			*cnt += ft_putchr(types[i]);
 		}
 		else if (types[i + 1] && ft_strchr("cspdiuxX%", types[i + 1]))
 		{
-			*cnt = *cnt + print_value(ap, types[i + 1]);
+			*cnt += print_value(ap, types[i + 1]);
 			i++;
 		}
 		i++;
