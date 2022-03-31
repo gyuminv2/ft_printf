@@ -14,7 +14,7 @@ int print_value(va_list *ap, char type)
     else if (type == 'd' || type == 'i')
         value = ft_form_d_i(va_arg(*ap, long int));
     else if (type == 'u')
-        value = ft_form_u(va_arg(*ap, int), "0123456789");
+        value = ft_form_u(va_arg(*ap, unsigned int), "0123456789");
     else if (type == 'X')
         value = ft_form_x_1(va_arg(*ap, unsigned int), "0123456789ABCDEF");
      else if (type == 'x')

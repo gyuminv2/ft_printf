@@ -28,15 +28,15 @@ int ft_printf(const char *types, ...)
 //     // printf("fu : %d\n", printf("%x\n", B));
 //     // ft_printf("ft : %d\n", ft_printf("%x\n", B));
 
-//     printf("[fu] : %i\n", INT_MIN);
-//     ft_printf("[ft] : %i\n", INT_MIN);
-//     printf("fu : %d\n", printf("%i\n", INT_MIN));
-//     ft_printf("ft : %d\n", ft_printf("%i\n", INT_MIN));
+//     printf("[fu] : %li\n", -41474836489);
+//     ft_printf("[ft] : %i\n", -41474836489);
+//     printf("fu : %d\n", printf("%li\n", -41474836489));
+//     ft_printf("ft : %d\n", ft_printf("%i\n", -41474836489));
 
-//     printf("[fu] : %d\n", INT_MIN);
-//     ft_printf("[ft] : %d\n", INT_MIN);
-//     printf("fu : %d\n", printf("%d\n", INT_MIN));
-//     ft_printf("ft : %d\n", ft_printf("%d\n", INT_MIN));
+//     printf("[fu] : %ld\n", -41474836489);
+//     ft_printf("[ft] : %d\n", -41474836489);
+//     printf("fu : %d\n", printf("%ld\n", -41474836489));
+//     ft_printf("ft : %d\n", ft_printf("%d\n", -41474836489));
 
 // //     printf("fu : %u\n", B);
 // //     ft_printf("ft : %u\n", B);
