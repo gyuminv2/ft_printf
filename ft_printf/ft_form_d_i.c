@@ -1,25 +1,30 @@
 #include "ft_printf.h"
 
-int	ft_form_d_i(long int  i)
+int	ft_form_d_i(long int i)
 {
-	int cnt;
+	int	res;
+	int	cnt;
 
+	res = i;
 	cnt = 0;
-	if (i < 0)
+	if (i == 2147483648)
 	{
-		i = -i;
-		cnt++;
-		i = ft_putchr('-');
+		cnt += ft_putchr('-') + 10;
+		ft_putnbr(i);
+		return (cnt);
 	}
-	i += ft_putnbr(i);
-	if (i == 0)
+	if (res < 0)
 	{
-		cnt++;
+		res = -res;
+		cnt += ft_putchr('-');
 	}
-	while (i != 0)
+	if (res == 0)
+		cnt++;
+	ft_putnbr(res);
+	while (res > 0)
 	{
-		i = i / 10;
+		res = res / 10;
 		cnt++;
 	}
-    return (cnt);
+	return (cnt);
 }

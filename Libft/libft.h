@@ -64,7 +64,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_putchr(int c);
 int		ft_putstr(char *str);
-int		ft_putnbr(int n);
+void	ft_putnbr(long int n);
 
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);

@@ -6,6 +6,7 @@
 # include "../Libft/libft.h"
 
 # include <stdio.h>
+# include <limits.h>
 
 int ft_printf(const char *types, ...);
 int type_check(va_list *ap,const char *types, int *cnt);

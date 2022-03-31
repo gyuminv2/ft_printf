@@ -13,4 +13,4 @@ int ft_form_x_1(unsigned int i, char *base)
     else
         cnt += ft_putchr(base[i]);
     return (cnt);
-} 
+}
